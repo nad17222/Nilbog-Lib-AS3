@@ -1,0 +1,1 @@
+package com.nilbog.util {	/**	 * @author markhawley	 * 	 * An interface marking an IDestroyable as being intended to work with an	 * object pooling solution. Static methods for restoration and pooling	 * are implied by this interface.	 */	public interface IPoolable extends IDestroyable	{	}}

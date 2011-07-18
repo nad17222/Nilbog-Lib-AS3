@@ -1,0 +1,480 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="b2Graphics,com.boristhebrave.Box2DWith.b2Graphics,awakeColor,fillAlpha,graphics,jointColor,lineThickness,physScale,sleepColor,staticColor,xformScale,drawBody,drawBodyLocal,drawBodyOutline,drawBodyOutlineLocal,drawJoint,drawJointOutline,drawSegment,drawShapeOutline,drawShapeOutlineLocal,drawWorld" name="keywords">
+<title>com.boristhebrave.Box2DWith.b2Graphics</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'b2Graphics - Box2DWith Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Box2DWith Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/boristhebrave/Box2DWith/b2Graphics.html&amp;com/boristhebrave/Box2DWith/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;b2Graphics</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#propertySummary">Properties</a>&nbsp;| <a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class b2Graphics"); titleBar_setSubNav(false,true,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.boristhebrave.Box2DWith</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class b2Graphics</td>
+</tr>
+</table>
+<p></p>
+  A re-implementation of debug drawing without the hassles of Box2D's API.
+  By drawing into Sprites which you persist through frames, the methods here
+  are appropriate for production release.
+  <p></p>
+<br>
+<hr>
+</div>
+<a name="propertySummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Properties</div>
+<table id="summaryTableProperty" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Property</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#awakeColor">awakeColor</a> : uint = 0xE6E6E6<div class="summaryTableDescription"> The color to use for awake dynamic bodies.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#fillAlpha">fillAlpha</a> : Number = 0.5<div class="summaryTableDescription"> The alpha to use for filling in bodies.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#graphics">graphics</a> : Graphics<div class="summaryTableDescription"> The wrapped Graphics to draw to.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#jointColor">jointColor</a> : uint = 0x80CDCD<div class="summaryTableDescription"> The color to use for drawing joints.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#lineThickness">lineThickness</a> : Number = 1<div class="summaryTableDescription"> The line thickness to use for drawing, in pixels.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#physScale">physScale</a> : Number<div class="summaryTableDescription"> The scale between pixels and Box2D units, in pixels/unit.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#sleepColor">sleepColor</a> : uint = 0x8080E6<div class="summaryTableDescription"> The color to use for sleeping dynamic bodies.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#staticColor">staticColor</a> : uint = 0x80E680<div class="summaryTableDescription"> The color to use for static bodies.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol"><a class="signatureLink" href="#xformScale">xformScale</a> : Number = 3<div class="summaryTableDescription"> The size to draw xforms at, in units.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+</table>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#b2Graphics()">b2Graphics</a>(graphics:Graphics, physScale:Number)</div>
+<div class="summaryTableDescription">
+   Creates a wrapper for Graphics, with it's own set of drawing properties.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#drawBody()">drawBody</a>(body:b2Body):void</div>
+<div class="summaryTableDescription">
+   Draws a body, including styling.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#drawBodyLocal()">drawBodyLocal</a>(body:b2Body):void</div>
+<div class="summaryTableDescription">
+   Draws a body in local co-ordinates, including styling.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#drawBodyOutline()">drawBodyOutline</a>(body:b2Body):void</div>
+<div class="summaryTableDescription">
+   Draws the given body, without setting any style properties.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#drawBodyOutlineLocal()">drawBodyOutlineLocal</a>(body:b2Body):void</div>
+<div class="summaryTableDescription">
+   Draws the given body in local cordinates, without setting any style properties.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#drawJoint()">drawJoint</a>(joint:b2Joint):void</div>
+<div class="summaryTableDescription">
+   Draws a joint, including styling.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#drawJointOutline()">drawJointOutline</a>(joint:b2Joint):void</div>
+<div class="summaryTableDescription">
+   Draws the given joint, without setting any style properties.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#drawSegment()">drawSegment</a>(p1:b2Vec2, p2:b2Vec2):void</div>
+<div class="summaryTableDescription">
+   Draws an unstyled line.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#drawShapeOutline()">drawShapeOutline</a>(shape:b2Shape):void</div>
+<div class="summaryTableDescription">
+   Draws the given shape in world co-ordinates, without setting any style properties.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#drawShapeOutlineLocal()">drawShapeOutlineLocal</a>(shape:b2Shape):void</div>
+<div class="summaryTableDescription">
+   Draws the given shape in local co-ordinates, without setting any style properties.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#drawWorld()">drawWorld</a>(world:b2World):void</div>
+<div class="summaryTableDescription">
+   Draws a world, including styling.</div>
+</td><td class="summaryTableOwnerCol">b2Graphics</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="propertyDetail"></a>
+<div class="detailSectionHeader">Property detail</div>
+<a name="awakeColor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">awakeColor</td><td class="detailHeaderType">property</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var awakeColor:uint = 0xE6E6E6</code><p> The color to use for awake dynamic bodies. </p></div>
+<a name="fillAlpha"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">fillAlpha</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var fillAlpha:Number = 0.5</code><p> The alpha to use for filling in bodies. </p></div>
+<a name="graphics"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">graphics</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var graphics:Graphics</code><p> The wrapped Graphics to draw to. </p></div>
+<a name="jointColor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">jointColor</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var jointColor:uint = 0x80CDCD</code><p> The color to use for drawing joints. </p></div>
+<a name="lineThickness"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">lineThickness</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var lineThickness:Number = 1</code><p> The line thickness to use for drawing, in pixels. </p></div>
+<a name="physScale"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">physScale</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var physScale:Number</code><p> The scale between pixels and Box2D units, in pixels/unit. </p></div>
+<a name="sleepColor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">sleepColor</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var sleepColor:uint = 0x8080E6</code><p> The color to use for sleeping dynamic bodies. </p></div>
+<a name="staticColor"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">staticColor</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var staticColor:uint = 0x80E680</code><p> The color to use for static bodies. </p></div>
+<a name="xformScale"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">xformScale</td><td class="detailHeaderType">property</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public var xformScale:Number = 3</code><p> The size to draw xforms at, in units. </p></div>
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="b2Graphics()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">b2Graphics</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function b2Graphics(graphics:Graphics, physScale:Number)</code><p>
+   Creates a wrapper for Graphics, with it's own set of drawing properties.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">graphics</span>:Graphics</code> &mdash; The Graphics object to wrap.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">physScale</span>:Number</code> &mdash; The scaling to use, in pixels/unit.
+   </td>
+</tr>
+</table>
+</div>
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="drawBody()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">drawBody</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function drawBody(body:b2Body):void</code><p>
+   Draws a body, including styling.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">body</span>:b2Body</code></td>
+</tr>
+</table>
+</div>
+<a name="drawBodyLocal()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">drawBodyLocal</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function drawBodyLocal(body:b2Body):void</code><p>
+   Draws a body in local co-ordinates, including styling.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">body</span>:b2Body</code></td>
+</tr>
+</table>
+</div>
+<a name="drawBodyOutline()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">drawBodyOutline</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function drawBodyOutline(body:b2Body):void</code><p>
+   Draws the given body, without setting any style properties.
+   Use this instead of drawBody if you want a more customized looking shape.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">body</span>:b2Body</code></td>
+</tr>
+</table>
+</div>
+<a name="drawBodyOutlineLocal()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">drawBodyOutlineLocal</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function drawBodyOutlineLocal(body:b2Body):void</code><p>
+   Draws the given body in local cordinates, without setting any style properties.
+   Use this instead of drawBodyLocal if you want a more customized looking shape.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">body</span>:b2Body</code></td>
+</tr>
+</table>
+</div>
+<a name="drawJoint()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">drawJoint</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function drawJoint(joint:b2Joint):void</code><p>
+   Draws a joint, including styling.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">joint</span>:b2Joint</code></td>
+</tr>
+</table>
+</div>
+<a name="drawJointOutline()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">drawJointOutline</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function drawJointOutline(joint:b2Joint):void</code><p>
+   Draws the given joint, without setting any style properties.
+   Use this instead of drawJoint if you want a more customized looking shape.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">joint</span>:b2Joint</code></td>
+</tr>
+</table>
+</div>
+<a name="drawSegment()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">drawSegment</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function drawSegment(p1:b2Vec2, p2:b2Vec2):void</code><p>
+   Draws an unstyled line.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">p1</span>:b2Vec2</code></td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">p2</span>:b2Vec2</code></td>
+</tr>
+</table>
+</div>
+<a name="drawShapeOutline()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">drawShapeOutline</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function drawShapeOutline(shape:b2Shape):void</code><p>
+   Draws the given shape in world co-ordinates, without setting any style properties.
+   Use this instead of drawShape if you want a more customized looking shape.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">shape</span>:b2Shape</code></td>
+</tr>
+</table>
+</div>
+<a name="drawShapeOutlineLocal()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">drawShapeOutlineLocal</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function drawShapeOutlineLocal(shape:b2Shape):void</code><p>
+   Draws the given shape in local co-ordinates, without setting any style properties.
+   Use this instead of drawShapeLocal if you want a more customized looking shape.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">shape</span>:b2Shape</code></td>
+</tr>
+</table>
+</div>
+<a name="drawWorld()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">drawWorld</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function drawWorld(world:b2World):void</code><p>
+   Draws a world, including styling. Note that it is more efficient to draw bodies into
+   separate DisplayObjects once, and then move them around, than to call drawWorld once
+   per frame.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">world</span>:b2World</code></td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright">Generated on 09/02/2009</center>
+</div>
+</body>
+</html>
+<!--Generated on 09/02/2009-->

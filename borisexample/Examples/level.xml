@@ -1,0 +1,26 @@
+<world>
+	<body id="ground"/>
+	<body>
+		<box bottom="0" left="-10" right="40" height="10"/>
+		<box top="30" left="-10" right="40" height="10"/>
+		<box right="0" top="-10" bottom="40" width="10"/>
+		<box left="30" top="-10" bottom="40" width="10"/>
+	</body>
+	<body position="15 15" id="a">
+		<circle radius="1" density="1"/>
+	</body>
+	<distance body1="ground" body2="a" world-anchor1="13 15"/>
+	<body position="10 10" id="b">
+		<circle radius="1" density="1"/>
+	</body>
+	<prismatic world-axis="0 1" body1="ground" body2="b" world-anchor="10 10" maxMotorForce="60" motorSpeed="-10" id="j1" upper="5" />
+	<body position="11 12" id="c">
+		<circle radius="1" density="1"/>
+	</body>
+	<revolute body1="b" body2="c" world-anchor="10 10" maxMotorTorque="100" motorSpeed="10"/>
+	<body position="10 16" id="d">
+		<circle radius="1" density="0.01"/>
+	</body>
+	<revolute body1="b" body2="d" world-anchor="10 10" id="j2" />
+	<gear joint1="j1" joint2="j2" ratio="10" />
+</world>

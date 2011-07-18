@@ -1,0 +1,1 @@
+package com.nilbog.collections {	/**	 * @author markhawley	 * 	 * Simple iterator interface.	 */	public interface IIterator 	{		function hasNext() :Boolean;		function next() :*;		function reset() :void;	}}

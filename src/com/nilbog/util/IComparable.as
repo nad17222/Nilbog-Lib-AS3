@@ -1,0 +1,1 @@
+package com.nilbog.util {	/**	 * @author markhawley	 */	public interface IComparable 	{		function equals( obj:IComparable ) :Boolean;		function lessThan( obj:IComparable ) :Boolean;		function greaterThan( obj:IComparable ) :Boolean;		function valueOf() :Object;	}}

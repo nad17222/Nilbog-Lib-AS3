@@ -1,0 +1,1 @@
+﻿package com.nilbog.animation {	import com.greensock.TweenMax;	/**	 * Provides a spot for universal animation library configuration.	 * 	 * @author jmhnilbog	 */	public class Animation 	{		// some sort of animator thingy		public static var animator:* = TweenMax;	}}

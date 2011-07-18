@@ -1,0 +1,627 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../print.css" type="text/css" media="print">
+<meta content="Box2DXML,com.boristhebrave.Box2DWith.Box2DXML,loadBody,loadBodyDef,loadBool,loadFloat,loadInt,loadJointDef,loadShapeDef,loadVec2,loadWorld" name="keywords">
+<title>com.boristhebrave.Box2DWith.Box2DXML</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Box2DXML - Box2DWith Documentation';
+				var baseRef = '../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">Box2DWith Documentation</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../all-classes.html')" href="../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../index-list.html')" href="../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../index.html?com/boristhebrave/Box2DWith/Box2DXML.html&amp;com/boristhebrave/Box2DWith/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Box2DXML</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Box2DXML"); titleBar_setSubNav(false,false,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">com.boristhebrave.Box2DWith</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Box2DXML</td>
+</tr>
+</table>
+<p></p>
+  Contains functions for loading Box2D shapes, bodies and joints from a simple XML format.
+  
+  <p>The XML format is formally defined in using <a href="http://relaxng.org/">Relax NG</a> in the file
+  <a href="box2d.rng">box2d.rng</a> found in the same directory as this class.
+  An <a href="http://www.w3.org/XML/Schema">XML Schema</a> file is also <a href="box2d.xsd">available</a>, autotranslated by 
+  <a href="http://www.thaiopensource.com/relaxng/trang.html">Trang</a>.</p>
+  
+  <p>Simply stated, the XML format has a root &lt;world/&gt; element. Inside that, there are various body and joint elements, 
+  and inside each body element is various shape elements, thus matching Box2Ds design layout quite closely.
+  See the methods loadShapeDef, loadBodyDef, and loadJointDef for the details on how each element is formed.</p>
+  
+  <p>In general, attribute names match exactly the corresponding Box2D property, and has the same defaults as Box2D.
+  Reasonable values are generated for certain properties when not specified, in the same manner as the various
+  Initialize functions of Box2D. Joint anchors can be specified in either world or local co-ordinates, either single
+  or jointly, though this implementation will not prevent you from overspecifying attributes.</p>
+  
+  <p>It is expected that in most cases, you will not want to use the XML to fully define worlds using loadWorld, as
+  this library doesn't provide any mechanism for handling other data, such as the appearance of a body. Instead, you
+  can use the various loading functions to synthesize your own XML format containing parts of the Box2D XML specification.
+  Or you can simply use this class as a more consise and portable way of writing out defintions, and deal with defining
+  the world in your own way.</p>
+  
+  <p></p>
+<p>
+<span class="classHeaderTableLabel">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../Box2DWith/Box2DXML.html#loadShapeDef()" target="">loadShapeDef()</a>
+<br>
+<a href="../Box2DWith/Box2DXML.html#loadBodyDef()" target="">loadBodyDef()</a>
+<br>
+<a href="../Box2DWith/Box2DXML.html#loadJointDef()" target="">loadJointDef()</a>
+</div>
+<br>
+<hr>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadBody()">loadBody</a>(xml:XML, world:b2World, bodyDef:b2BodyDef = null, shapeDef:b2ShapeDef = null):b2Body</div>
+<div class="summaryTableDescription">[static]
+   Creates a body from a &lt;body/&gt; element with nested shape elementss, using the definitions from loadBodyDef and loadShapeDef.</div>
+</td><td class="summaryTableOwnerCol">Box2DXML</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadBodyDef()">loadBodyDef</a>(body:XML, base:b2BodyDef = null):b2BodyDef</div>
+<div class="summaryTableDescription">[static]
+   Converts a &lt;body/&gt; element into a b2BodyDef.</div>
+</td><td class="summaryTableOwnerCol">Box2DXML</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadBool()">loadBool</a>(attribute:XMLList, defacto:Boolean = false):Boolean</div>
+<div class="summaryTableDescription">[static]
+   Loads a Boolean from a given attribute.</div>
+</td><td class="summaryTableOwnerCol">Box2DXML</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadFloat()">loadFloat</a>(attribute:XMLList, defacto:Number):Number</div>
+<div class="summaryTableDescription">[static]
+   Loads a Number from a given attribute.</div>
+</td><td class="summaryTableOwnerCol">Box2DXML</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadInt()">loadInt</a>(attribute:XMLList, defacto:int):int</div>
+<div class="summaryTableDescription">[static]
+   Loads a int from a given attribute.</div>
+</td><td class="summaryTableOwnerCol">Box2DXML</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadJointDef()">loadJointDef</a>(joint:XML, resolver:Function, base:b2JointDef = null):b2JointDef</div>
+<div class="summaryTableDescription">[static]
+   Converts an XML element into a b2JointDef.</div>
+</td><td class="summaryTableOwnerCol">Box2DXML</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadShapeDef()">loadShapeDef</a>(shape:XML, base:b2ShapeDef = null):b2ShapeDef</div>
+<div class="summaryTableDescription">[static]
+   Converts an XML element into a b2ShapeDef.</div>
+</td><td class="summaryTableOwnerCol">Box2DXML</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadVec2()">loadVec2</a>(attribute:XMLList, defacto:b2Vec2 = null):b2Vec2</div>
+<div class="summaryTableDescription">[static]
+   Loads a b2Vec2 from a given attribute.</div>
+</td><td class="summaryTableOwnerCol">Box2DXML</td>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#loadWorld()">loadWorld</a>(xml:XML, world:b2World, bodyDef:b2BodyDef = null, shapeDef:b2ShapeDef = null, jointDef:b2JointDef = null):void</div>
+<div class="summaryTableDescription">[static]
+   Loads a world given a XML defintion.</div>
+</td><td class="summaryTableOwnerCol">Box2DXML</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="methodDetail"></a>
+<div class="detailSectionHeader">Method detail</div>
+<a name="loadBody()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadBody</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function loadBody(xml:XML, world:b2World, bodyDef:b2BodyDef = null, shapeDef:b2ShapeDef = null):b2Body</code><p>
+   Creates a body from a &lt;body/&gt; element with nested shape elementss, using the definitions from loadBodyDef and loadShapeDef.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">xml</span>:XML</code> &mdash; The &lt;body/&gt; element to parse.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">world</span>:b2World</code> &mdash; The world to create the body from.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">bodyDef</span>:b2BodyDef</code> (default = <code>null</code>)<code></code> &mdash; The base body definition to use for defaults.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">shapeDef</span>:b2ShapeDef</code> (default = <code>null</code>)<code></code> &mdash; The base shape definition to use for defaults.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>b2Body</code> &mdash; A newly created body in world.
+   </td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../Box2DWith/Box2DXML.html#loadBodyDef()" target="">loadBodyDef()</a>
+<br>
+<a href="../Box2DWith/Box2DXML.html#loadShapeDef()" target="">loadShapeDef()</a>
+</div>
+</div>
+<a name="loadBodyDef()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadBodyDef</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function loadBodyDef(body:XML, base:b2BodyDef = null):b2BodyDef</code><p>
+   Converts a &lt;body/&gt; element into a b2BodyDef.
+   
+   </p><p>The following attributes are recognized, corresponding directly
+   to the b2BodyDef properties:</p>
+   <pre>
+   allowSleep       Boolean
+   angle            Number
+   angularDamping   Number
+   fixedRotation    Boolean
+   isBullet         Boolean
+   isSleeping       Boolean
+   linearDamping    Number
+   center           b2Vec2
+   I                Number
+   mass             Number
+   x                Number
+   y                Number
+   position         b2Vec2
+   userData         &#x2A;  </pre>
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">body</span>:XML</code> &mdash; An XML element in the above format.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">base</span>:b2BodyDef</code> (default = <code>null</code>)<code></code> &mdash; A body definition to use as the default when an XML attribute is missing.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>b2BodyDef</code> &mdash; The specified b2BodyDef.
+   </td>
+</tr>
+</table>
+</div>
+<a name="loadBool()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadBool</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function loadBool(attribute:XMLList, defacto:Boolean = false):Boolean</code><p>
+   Loads a Boolean from a given attribute. Only the value "true" is recognized as true. Everything else is false.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">attribute</span>:XMLList</code> &mdash; An attribute list of zero or one attributes to parse into a Boolean.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">defacto</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash;  The default number to use in case there is no attribute.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Boolean</code> &mdash; The parsed Boolean, or defacto.
+   </td>
+</tr>
+</table>
+</div>
+<a name="loadFloat()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadFloat</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function loadFloat(attribute:XMLList, defacto:Number):Number</code><p>
+   Loads a Number from a given attribute.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">attribute</span>:XMLList</code> &mdash; An attribute list of zero or one attributes to parse into a Number.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">defacto</span>:Number</code> &mdash;  The default number to use in case there is no attribute or it is not a valid Number.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>Number</code> &mdash; The parsed Number, or defacto.
+   </td>
+</tr>
+</table>
+</div>
+<a name="loadInt()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadInt</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function loadInt(attribute:XMLList, defacto:int):int</code><p>
+   Loads a int from a given attribute.
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">attribute</span>:XMLList</code> &mdash; An attribute list of zero or one attributes to parse into a int.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">defacto</span>:int</code> &mdash;  The default number to use in case there is no attribute or it is not a valid int.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>int</code> &mdash; The parsed int, or defacto.
+   </td>
+</tr>
+</table>
+</div>
+<a name="loadJointDef()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadJointDef</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function loadJointDef(joint:XML, resolver:Function, base:b2JointDef = null):b2JointDef</code><p>
+   Converts an XML element into a b2JointDef.
+   
+   </p><p>The following elements and attributes are recognized:</p>
+   <pre>
+   &lt;gear/&gt;    b2GearJointDef
+           ratio           Number
+           joint1          String    (resolved)
+           joint2          String    (resolved)
+   
+   &lt;prismatic/&gt; b2PrismaticJointDef
+           motorSpeed      Number
+           maxMotorForce   Number
+           enableMotor     Boolean   (automatically set)
+           lower           Number
+           upper           Number
+           enableLimits    Boolean   (automatically set)
+           referenceAngle  Number    (automatically set)
+           world-axis      b2Vec2
+           local-axis1     b2Vec2
+   
+   &lt;revolute/&gt;    b2RevoluteJointDef
+           motorSpeed      Number
+           maxMotorTorque  Number
+           enableMotor     Boolean   (automatically set)
+           lower           Number
+           upper           Number
+           enableLimits    Boolean   (automatically set)
+           referenceAngle  Number    (automatically set)
+   
+   &lt;distance/&gt;    b2DistanceJointDef
+           dampingRatio    Number
+           frequencyHz     Number
+           length          Number    (automatically set)
+   
+   &lt;pulley/&gt; b2PulleyJointDef
+           ratio           Number
+           maxLength1      Number
+           maxLength2      Number
+           world-ground    b2Vec2
+           world-ground1   b2Vec2
+           world-ground2   b2Vec2
+           length1         Number    (automatically set)
+           length2         Number    (automatically set)
+   
+   &lt;mouse/&gt;    b2MouseJointDef
+           dampingRatio    Number
+           frequencyHz     Number
+           maxForce        Number
+           target          b2Vec2 </pre>
+   
+   <p>Additionally, all elements support the following attributes:</p>
+   <pre>
+   body1             String          (resolved)
+   body2             String          (resolved)
+   world-anchor      b2Vec2
+   world-anchor1     b2Vec2
+   world-anchor2     b2Vec2
+   local-anchor1     b2Vec2
+   local-anchor2     b2Vec2
+   collideConnected  Boolean </pre>
+   
+   <p>Note that if the joint does not have a well defined body from body1/body2 or via providing base,
+   then world co-ordinates cannot be used, except for the ground anchors of a pulley joint.</p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">joint</span>:XML</code> &mdash; An XML element in the above format
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">resolver</span>:Function</code> &mdash; A function mapping strings to b2Bodys (and b2Joint).
+   This is used so that the body1 and body2 (and joint1 and joint2 from &lt;gear/&gt;) can get resolved
+   to the correct references. You can avoid using this if these properties are not defined, and providing them via base.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">base</span>:b2JointDef</code> (default = <code>null</code>)<code></code> &mdash; A joint definition to use as the default when an XML attribute is missing.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>b2JointDef</code> &mdash; The corresponding b2ShapeDef
+   </td>
+</tr>
+</table>
+</div>
+<a name="loadShapeDef()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadShapeDef</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function loadShapeDef(shape:XML, base:b2ShapeDef = null):b2ShapeDef</code><p>
+   Converts an XML element into a b2ShapeDef.
+   
+   </p><p>The following elements/usages are recognized:</p>
+   <pre>
+   &lt;circle radius="0." x="0." y="0."/&gt;
+        b2CircleDef 
+   &lt;circle radius="0." localPosition="0. 0."/&gt;
+        b2CircleDef    
+   &lt;polygon&gt;
+    &lt;vertex x="0." y="0."/&gt;
+    &lt;vertex x="0." y="0."/&gt;
+    &lt;vertex x="0." y="0."/&gt;
+   &lt;/polygon&gt;
+        b2PolygonDef
+   &lt;box x="0." y="0." width="0." height="0." angle="0."/&gt;
+        b2PolygonDef formed into an OBB.
+   &lt;box left="" right="" top="" bottom=""/&gt;
+        b2PolygonDef formed into an AABB.
+        height and width can substitute for one of top/bottom and one of left/right.</pre>
+   
+   <p>Additionally, all elements support the following attributes.</p>
+   <pre>
+   density        float
+   friction       float
+   isSensor       Boolean
+   userData       String
+   categoryBits   int
+   maskBits       int
+   groupIndex     int</pre>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">shape</span>:XML</code> &mdash; An XML element in the above format
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">base</span>:b2ShapeDef</code> (default = <code>null</code>)<code></code> &mdash; A shape definition to use as the default when an XML attribute is missing.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>b2ShapeDef</code> &mdash; The corresponding b2ShapeDef
+   </td>
+</tr>
+</table>
+</div>
+<a name="loadVec2()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadVec2</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function loadVec2(attribute:XMLList, defacto:b2Vec2 = null):b2Vec2</code><p>
+   Loads a b2Vec2 from a given attribute. Vectors are stored as space delimited Numbers, e.g. "1.5 2.3".
+   </p><span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">attribute</span>:XMLList</code> &mdash; An attribute list of zero or one attributes to parse into a b2Vec2.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">defacto</span>:b2Vec2</code> (default = <code>null</code>)<code></code> &mdash;  The default number to use in case there is no attribute or it is not a valid b2Vec2.
+   </td>
+</tr>
+</table>
+<p></p>
+<span class="label">Returns</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20"></td><td><code>b2Vec2</code> &mdash; The parsed b2Vec2, or defacto.
+   </td>
+</tr>
+</table>
+</div>
+<a name="loadWorld()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">loadWorld</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">method</td><td class="detailHeaderRule">&nbsp;</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public static function loadWorld(xml:XML, world:b2World, bodyDef:b2BodyDef = null, shapeDef:b2ShapeDef = null, jointDef:b2JointDef = null):void</code><p>
+   Loads a world given a XML defintion. 
+   
+   </p><p>xml is expected to a &lt;world&gt; element with child &lt;body&gt; and joint elements as specified in
+   loadBodyDef and loadShapeDef. &lt;body/&gt; elements should have children shape elements as 
+   specified in loadShapeDef.</p>
+   
+   <p>Both body and joint elements can have an id attribute that gives a string identifier
+   to be later resolved for use with the body1 and body2 attributes of joints,
+   and joint1 and joint2 attribute of gear joints.</p>
+   
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">xml</span>:XML</code> &mdash;  A <world/> element in the above format.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">world</span>:b2World</code> &mdash; A world to load into. Unlike other Box2DXMl.load functions, this function does not create an object from scratch.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">bodyDef</span>:b2BodyDef</code> (default = <code>null</code>)<code></code> &mdash; A body definition to use for defaults.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">shapeDef</span>:b2ShapeDef</code> (default = <code>null</code>)<code></code> &mdash; A shape definition to use for defaults.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">jointDef</span>:b2JointDef</code> (default = <code>null</code>)<code></code> &mdash; A joint definition to use for defaults.
+   </td>
+</tr>
+</table>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

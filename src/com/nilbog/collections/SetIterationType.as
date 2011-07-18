@@ -1,0 +1,1 @@
+package com.nilbog.collections {	import com.nilbog.collections.IterationType;			/**	 * @author markhawley	 */	public class SetIterationType extends IterationType 	{		public static const DEFAULT:IterationType = new IterationType();		public static const ORDERED:IterationType = new IterationType();		public static const REVERSED:IterationType = new IterationType();	}}

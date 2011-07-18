@@ -1,0 +1,81 @@
+<project name="as3Library" basedir="." default="testing">
+	<description>
+		Build file.
+	</description>
+	
+	<target name="setup">
+		<tstamp>
+			<format property="build.time" pattern="MM/dd/yyyy hh:mm aa"/>
+		</tstamp>
+		
+		<echo message="Loading local properties from file: ${basedir}/local.properties"/>
+		<property file="${basedir}/local.properties"/>
+
+		<echo message="Loading project properties from file: ${basedir}/project.properties"/>
+		<property file="${basedir}/project.properties"/>
+		
+		<echo message="Writing new version number into codebase..."/>
+		<exec executable="${perl.exe}" failonerror="true">
+			<arg line="
+				'${as3Library.tools}/scripts/generateVersionNumber.pl'
+				'${as3Library.src}/com/nilbog/util/getBuildVersion.as'
+				'${build.time}'"/>
+		</exec>
+	</target>
+	
+	<target name="testing" depends="setup">
+		<echo message="Testing project...-strict
+			-sp '${as3Library.tests}'
+			-sp '${as3Library.src}'
+			-l '${core}'
+			-o '${as3Library.tests}/LibraryTestRunner.swf'
+			'${as3Library.tests}/LibraryTestRunner.as'
+			"/>
+		<exec executable="${compiler.exe}" failonerror="true">
+			<arg line='-strict -use-network=false
+				-sp "${as3Library.tests}"
+				-sp "${as3Library.src}"
+				-sp "${box2d}"
+				-l "${core}"
+				-o "${as3Library.tests}/LibraryTestRunner.swf"
+				"${as3Library.tests}/LibraryTestRunner.as"
+				'/>
+		</exec>
+		
+		<echo message="Launching project test suite."/>
+		<exec executable="open">
+			<arg line="
+				'file:///${tests}/LibraryTestRunner.swf'"/>
+		</exec>
+	</target>
+	
+	<target name="document" depends="setup">
+		<echo message="Documenting project..."/>
+				<exec executable="${as3Library.tools}/flex-sdk/bin/asdoc" failonerror="true">
+					<arg line="
+						-source-path ${as3Library.src} ${as3Library.tests} ${box2d} ${as3Library.experiments}
+						-doc-sources ${as3Library.src}
+						-output docs"/>
+				</exec>
+	</target>
+	
+	<target name="publish" depends="testing,document">
+		<echo message="Done."/>
+	</target>
+	
+	<target name="deployToTesting" depends="testing">
+		<echo message="Manually updating testing site. This is only supposed
+			to happen automatically, and at night, so I hope you know what you're
+			doing!"/>
+	</target>
+	
+	<target name="deployToStaging" depends="testing">
+		<echo message="Deploying to staging environment."/>
+	</target>
+	
+	<target name="putStagingLive">
+		<echo message="Going live. Cross your fingers."/>
+	</target>
+		
+	
+</project>

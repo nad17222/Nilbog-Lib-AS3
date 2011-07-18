@@ -1,0 +1,20 @@
+//GraphVis .dot file show class inheritance
+strict digraph classes {
+graph [URL=""];
+com_boristhebrave_Box2DWith_Flint_BodiesInit [label="BodiesInit"] [URL="com/boristhebrave/Box2DWith/Flint/BodiesInit.html"];
+com_boristhebrave_Box2DWith_Flint_BodiesInit->org_flintparticles_common_initializers_InitializerBase;
+com_boristhebrave_Box2DWith_Flint_CircleInit [label="CircleInit"] [URL="com/boristhebrave/Box2DWith/Flint/CircleInit.html"];
+com_boristhebrave_Box2DWith_Flint_CircleInit->org_flintparticles_common_initializers_InitializerBase;
+com_boristhebrave_Box2DWith_Flint_Physics [label="Physics"] [URL="com/boristhebrave/Box2DWith/Flint/Physics.html"];
+com_boristhebrave_Box2DWith_Flint_Physics->org_flintparticles_common_activities_ActivityBase;
+com_boristhebrave_Box2DWith_Flint_BodyZone [label="BodyZone"] [URL="com/boristhebrave/Box2DWith/Flint/BodyZone.html"];
+com_boristhebrave_Box2DWith_Flint_BodyZone->org_flintparticles_twoD_zones_Zone2D [style=dotted];
+com_boristhebrave_Box2DWith_Flint_BodyRenderer [label="BodyRenderer"] [URL="com/boristhebrave/Box2DWith/Flint/BodyRenderer.html"];
+com_boristhebrave_Box2DWith_Flint_BodyRenderer->org_flintparticles_common_renderers_RendererBase;
+com_boristhebrave_Box2DWith_Flint_BodyInit [label="BodyInit"] [URL="com/boristhebrave/Box2DWith/Flint/BodyInit.html"];
+com_boristhebrave_Box2DWith_Flint_BodyInit->org_flintparticles_common_initializers_InitializerBase;
+com_boristhebrave_Box2DWith_Flint_Collide [label="Collide"] [URL="com/boristhebrave/Box2DWith/Flint/Collide.html"];
+com_boristhebrave_Box2DWith_Flint_Collide->org_flintparticles_common_actions_ActionBase;
+com_boristhebrave_Box2DWith_b2Graphics [label="b2Graphics"] [URL="com/boristhebrave/Box2DWith/b2Graphics.html"];
+com_boristhebrave_Box2DWith_b2XML [label="b2XML"] [URL="com/boristhebrave/Box2DWith/b2XML.html"];
+}

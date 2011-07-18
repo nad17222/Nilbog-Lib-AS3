@@ -1,0 +1,1 @@
+package com.nilbog.log {    /**     * @author jmhnilbog     */    public interface ILoggable     {    	    }}

@@ -1,0 +1,1 @@
+package com.nilbog.collections {	/**	 * @author markhawley	 * 	 * List iterator interface.	 */	public interface IListIterator extends IIterator	{		function hasPrevious() :Boolean;		function nextIndex() :int;		function previous() :*;		function previousIndex() :int;	}}

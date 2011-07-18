@@ -1,0 +1,1 @@
+package com.nilbog.collections {	import com.nilbog.collections.IterationType;			/**	 * @author markhawley	 */	public class BagIterationType extends IterationType 	{		public static const DEFAULT:IterationType = new IterationType();	}}

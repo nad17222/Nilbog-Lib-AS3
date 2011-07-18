@@ -1,0 +1,1 @@
+package com.nilbog.random.implementations {    /**     * @author jmhnilbog     */    public interface IRNGImplementation     {    	function set seed(s:uint) :void;    	function get seed() :uint;    	function random() :Number;    }}
